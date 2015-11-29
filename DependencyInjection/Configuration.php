@@ -10,7 +10,7 @@ class Configuration implements ConfigurationInterface
     /**
      * Generates the configuration tree builder.
      *
-     * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder The tree builder
+     * @return TreeBuilder The tree builder
      */
     public function getConfigTreeBuilder()
     {
@@ -19,13 +19,18 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('api_keys')
-                    ->defaultValue(array())
+                ->arrayNode('api_keys')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('GCM')
+                            ->defaultValue('')
+                            ->end()
+                        ->end()
                     ->end()
-                ->scalarNode('ttl')
+                ->integerNode('ttl')
                     ->defaultValue(null)
                     ->end()
-                ->scalarNode('timeout')
+                ->integerNode('timeout')
                     ->defaultValue(10)
                     ->end()
                 ->end()
