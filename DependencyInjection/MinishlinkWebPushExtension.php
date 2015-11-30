@@ -4,7 +4,7 @@ namespace Minishlink\Bundle\WebPushBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
@@ -19,11 +19,11 @@ class MinishlinkWebPushExtension extends Extension
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('web_push.xml');
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('web_push.yml');
 
-        $container->setParameter('web_push.api_keys', $config['api_keys']);
-        $container->setParameter('web_push.ttl', $config['ttl']);
-        $container->setParameter('web_push.timeout', $config['timeout']);
+        $container->setParameter('minishlink_web_push.api_keys', $config['api_keys']);
+        $container->setParameter('minishlink_web_push.ttl', $config['ttl']);
+        $container->setParameter('minishlink_web_push.timeout', $config['timeout']);
     }
 }
