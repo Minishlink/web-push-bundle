@@ -34,3 +34,14 @@ public function registerBundles()
     );
 }
 ```
+
+## Configuration
+Here is the default configuration, you may change it in your `app/config/config.yml`.
+
+```yml
+minishlink_web_push:
+  api_keys: # you should put api keys in your `app/config/parameters.yml` file
+    GCM: ''
+  ttl: null # seconds
+  timeout: 10 # seconds
+```
