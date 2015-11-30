@@ -8,11 +8,11 @@ the [Web Push API specification](http://www.w3.org/TR/push-api/).
 
 ```php
 <?php
-
-$webPush = $this->container->get('web_push');
+/** @var \Minishlink\WebPush\WebPush */
+$webPush = $this->container->get('minishlink_web_push');
 ```
 
-The bundle provides a new `web_push` service that returns an instance of `Minishlink\WebPush\WebPush`.
+The bundle provides a new `minishlink_web_push` service that returns an instance of `Minishlink\WebPush\WebPush`.
 
 For more info on what you can do with `$webPush`, check [Minishlink/web-push](https://github.com/Minishlink/web-push).
 
@@ -40,8 +40,8 @@ Here is the default configuration, you may change it in your `app/config/config.
 
 ```yml
 minishlink_web_push:
-  api_keys: # you should put api keys in your `app/config/parameters.yml` file
+  api_keys: # you should put api keys in your "app/config/parameters.yml" file
     GCM: ''
-  ttl: null # seconds
-  timeout: 10 # seconds
+  ttl: null # Time to Live of notifications in seconds
+  timeout: 10 # Timeout of each request in seconds
 ```
