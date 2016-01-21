@@ -1,4 +1,4 @@
-# MinishlinkWebPushBundle
+# MinishlinkWebPushBundle [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0c2947f7-f173-4d00-b0bb-da26613d52a2/mini.png)](https://insight.sensiolabs.com/projects/0c2947f7-f173-4d00-b0bb-da26613d52a2)
 
 This bundle provides a simple integration of the [WebPush library](https://github.com/Minishlink/web-push).
 
