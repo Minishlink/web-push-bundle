@@ -1,6 +1,7 @@
-# MinishlinkWebPushBundle [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0c2947f7-f173-4d00-b0bb-da26613d52a2/mini.png)](https://insight.sensiolabs.com/projects/0c2947f7-f173-4d00-b0bb-da26613d52a2)
-
+# MinishlinkWebPushBundle
 This bundle provides a simple integration of the [WebPush library](https://github.com/Minishlink/web-push).
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0c2947f7-f173-4d00-b0bb-da26613d52a2/mini.png)](https://insight.sensiolabs.com/projects/0c2947f7-f173-4d00-b0bb-da26613d52a2)
 
 ## Usage
 Web Push sends notifications to endpoints which server delivers web push notifications as described in
