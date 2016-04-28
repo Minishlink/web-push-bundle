@@ -25,5 +25,6 @@ class MinishlinkWebPushExtension extends Extension
         $container->setParameter('minishlink_web_push.api_keys', $config['api_keys']);
         $container->setParameter('minishlink_web_push.ttl', $config['ttl']);
         $container->setParameter('minishlink_web_push.timeout', $config['timeout']);
+        $container->setParameter('minishlink_web_push.automatic_padding', $config['automatic_padding']);
     }
 }

@@ -33,6 +33,9 @@ class Configuration implements ConfigurationInterface
                 ->integerNode('timeout')
                     ->defaultValue(10)
                 ->end()
+                ->booleanNode('automatic_padding')
+                    ->defaultValue(true)
+                ->end()
             ->end()
         ;
 
