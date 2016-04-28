@@ -45,4 +45,5 @@ minishlink_web_push:
     GCM: ''
   ttl: null # Time to Live of notifications in seconds
   timeout: 10 # Timeout of each request in seconds
+  automatic_padding: true # pad messages automatically for better security (against more bandwith usage)
 ```
