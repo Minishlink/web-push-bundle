@@ -43,7 +43,7 @@ Here is the default configuration, you may change it in your `app/config/config.
 minishlink_web_push:
   api_keys: # you should put api keys in your "app/config/parameters.yml" file
     GCM: ''
-  ttl: null # Time to Live of notifications in seconds
-  timeout: 10 # Timeout of each request in seconds
+  ttl: 2419200 # Time to Live of notifications in seconds
+  timeout: 30 # Timeout of each request in seconds
   automatic_padding: true # pad messages automatically for better security (against more bandwith usage)
 ```
