@@ -44,6 +44,8 @@ minishlink_web_push:
   api_keys: # you should put api keys in your "app/config/parameters.yml" file
     GCM: ''
   ttl: 2419200 # Time to Live of notifications in seconds
+  urgency: ~ # can be very-low / low / normal / high
+  topic: ~ # default identifier for your notifications
   timeout: 30 # Timeout of each request in seconds
   automatic_padding: true # pad messages automatically for better security (against more bandwith usage)
 ```
