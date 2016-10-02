@@ -22,7 +22,11 @@ class MinishlinkWebPushExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('web_push.yml');
 
-        $container->setParameter('minishlink_web_push.auth', array_merge($config['api_keys'], $config['vapid']));
+        if (array_key_exists('VAPID', $config)) {
+            $auth = array_merge($config['api_keys'], $config['VAPID']);
+        } else $auth = $config['api_keys'];
+
+        $container->setParameter('minishlink_web_push.auth', $auth);
         $container->setParameter('minishlink_web_push.ttl', $config['ttl']);
         $container->setParameter('minishlink_web_push.timeout', $config['timeout']);
         $container->setParameter('minishlink_web_push.automatic_padding', $config['automatic_padding']);
