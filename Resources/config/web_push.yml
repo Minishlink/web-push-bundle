@@ -3,7 +3,7 @@ parameters:
 
 services:
   minishlink_web_push:
-    class: %minishlink_web_push.class%
-    arguments: [%minishlink_web_push.api_keys%, %minishlink_web_push.default_options%, %minishlink_web_push.timeout%, null]
+    class: '%minishlink_web_push.class%'
+    arguments: ['%minishlink_web_push.api_keys%', '%minishlink_web_push.default_options%', '%minishlink_web_push.timeout%', null]
     calls:
       - [setAutomaticPadding, ['%minishlink_web_push.automatic_padding%']]
