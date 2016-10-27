@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": ">=5.4",
-    "minishlink/web-push": "^1.0.0"
+    "minishlink/web-push": "^1.2.0"
   },
   "require-dev": {
     "symfony/framework-bundle": "^2.7"
