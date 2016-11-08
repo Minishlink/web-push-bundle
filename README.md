@@ -41,11 +41,17 @@ Here is the default configuration, you may change it in your `app/config/config.
 
 ```yml
 minishlink_web_push:
-  api_keys: # you should put api keys in your "app/config/parameters.yml" file
+  api_keys:                       # you should put api keys in your "app/config/parameters.yml" file
     GCM: ''
-  ttl: 2419200 # Time to Live of notifications in seconds
-  urgency: ~ # can be very-low / low / normal / high
-  topic: ~ # default identifier for your notifications
-  timeout: 30 # Timeout of each request in seconds
-  automatic_padding: true # pad messages automatically for better security (against more bandwith usage)
+  VAPID:
+    subject: https://yoursite.com # can be an URL or a mailto:
+    publicKey: ~88 chars          # uncompressed public key P-256 encoded in Base64-URL
+    privateKey: ~44 chars         # the secret multiplier of the private key encoded in Base64-URL
+    pemFile: path/to/pem          # if you have a PEM file and can link to it on your filesystem
+    pem: pemFileContent           # if you have a PEM file and want to hardcode its content
+  ttl: 2419200                    # Time to Live of notifications in seconds
+  urgency: ~                      # can be very-low / low / normal / high
+  topic: ~                        # default identifier for your notifications
+  timeout: 30                     # Timeout of each request in seconds
+  automatic_padding: true         # pad messages automatically for better security (against more bandwith usage)
 ```
