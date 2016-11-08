@@ -28,7 +28,11 @@ class MinishlinkWebPushExtension extends Extension
             'topic' => $config['topic'],
         );
 
-        $container->setParameter('minishlink_web_push.api_keys', $config['api_keys']);
+        if (array_key_exists('VAPID', $config)) {
+            $auth = array_merge($config['api_keys'], array('VAPID' => $config['VAPID']));
+        } else $auth = $config['api_keys'];
+
+        $container->setParameter('minishlink_web_push.auth', $auth);
         $container->setParameter('minishlink_web_push.default_options', $defaultOptions);
         $container->setParameter('minishlink_web_push.timeout', $config['timeout']);
         $container->setParameter('minishlink_web_push.automatic_padding', $config['automatic_padding']);
