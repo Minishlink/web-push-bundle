@@ -19,7 +19,7 @@ class MinishlinkWebPushExtension extends Extension
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('web_push.yml');
 
         $defaultOptions = array(
@@ -30,7 +30,9 @@ class MinishlinkWebPushExtension extends Extension
 
         if (array_key_exists('VAPID', $config)) {
             $auth = array_merge($config['api_keys'], array('VAPID' => $config['VAPID']));
-        } else $auth = $config['api_keys'];
+        } else {
+            $auth = $config['api_keys'];
+        }
 
         $container->setParameter('minishlink_web_push.auth', $auth);
         $container->setParameter('minishlink_web_push.default_options', $defaultOptions);
