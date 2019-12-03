@@ -14,10 +14,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('minishlink_web_push');
+        $treeBuilder = new TreeBuilder('minishlink_web_push');
 
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
                 ->arrayNode('api_keys')
                     ->addDefaultsIfNotSet()

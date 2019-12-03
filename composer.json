@@ -22,9 +22,9 @@
     "minishlink/web-push": "^4.0.0"
   },
   "require-dev": {
-    "symfony/framework-bundle": "^3.0|^4.0",
+    "symfony/framework-bundle": "^3.0|^4.0|^5.0",
     "phpunit/phpunit": "^7.1",
-    "symfony/phpunit-bridge": "^4.0",
+    "symfony/phpunit-bridge": "^5.0",
     "matthiasnoback/symfony-dependency-injection-test": "^3.0"
   },
   "target-dir": "Minishlink/Bundle/WebPushBundle",
