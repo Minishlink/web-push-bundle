@@ -18,8 +18,8 @@
     }
   ],
   "require": {
-    "php": "^7.1",
-    "minishlink/web-push": "^5.0"
+    "php": "^7.2",
+    "minishlink/web-push": "^6.0"
   },
   "require-dev": {
     "symfony/framework-bundle": "^4.2|^5.0",

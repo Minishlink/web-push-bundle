@@ -41,8 +41,6 @@ Here is the default configuration, you may change it in your `app/config/config.
 
 ```yml
 minishlink_web_push:
-  api_keys:                       # you should put api keys in your "app/config/parameters.yml" file
-    GCM: ''
   VAPID:
     subject: https://yoursite.com # can be an URL or a mailto:
     publicKey: ~88 chars          # uncompressed public key P-256 encoded in Base64-URL
