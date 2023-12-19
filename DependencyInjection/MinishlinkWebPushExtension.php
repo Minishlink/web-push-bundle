@@ -28,7 +28,7 @@ class MinishlinkWebPushExtension extends Extension
             'topic' => $config['topic'],
         );
 
-        $container->setParameter('minishlink_web_push.auth', $config['VAPID']);
+        $container->setParameter('minishlink_web_push.auth', isset($config['VAPID']) ? ['VAPID' => $config['VAPID']] : []);
         $container->setParameter('minishlink_web_push.default_options', $defaultOptions);
         $container->setParameter('minishlink_web_push.timeout', $config['timeout']);
         $container->setParameter('minishlink_web_push.automatic_padding', $config['automatic_padding']);
