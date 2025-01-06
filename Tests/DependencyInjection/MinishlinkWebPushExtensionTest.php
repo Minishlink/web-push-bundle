@@ -16,7 +16,8 @@ use Minishlink\Bundle\WebPushBundle\DependencyInjection\MinishlinkWebPushExtensi
 class MinishlinkWebPushExtensionTest extends AbstractExtensionTestCase
 {
 
-    protected function getContainerExtensions() {
+    protected function getContainerExtensions(): array
+    {
         return array(
             new MinishlinkWebPushExtension()
         );
@@ -30,7 +31,9 @@ class MinishlinkWebPushExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasParameter('minishlink_web_push.timeout');
         $this->assertContainerBuilderHasParameter('minishlink_web_push.automatic_padding');
         $this->assertContainerBuilderHasService('minishlink_web_push');
+        $this->assertContainerBuilderHasService('Minishlink\WebPush\WebPush');
         $this->assertInstanceOf(WebPush::class, $this->container->get('minishlink_web_push'));
+        $this->assertInstanceOf(WebPush::class, $this->container->get('Minishlink\WebPush\WebPush'));
     }
 
 }

@@ -7,3 +7,5 @@ services:
     arguments: ['%minishlink_web_push.auth%', '%minishlink_web_push.default_options%', '%minishlink_web_push.timeout%', []]
     calls:
       - [setAutomaticPadding, ['%minishlink_web_push.automatic_padding%']]
+  Minishlink\WebPush\WebPush:
+      alias: minishlink_web_push
