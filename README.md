@@ -50,6 +50,25 @@ minishlink_web_push:
   ttl: 2419200                    # Time to Live of notifications in seconds
   urgency: ~                      # can be very-low / low / normal / high
   topic: ~                        # default identifier for your notifications
-  timeout: 30                     # Timeout of each request in seconds
+  http_client: ~                  # service id of a PSR-18 client to use (e.g. a pre-configured Guzzle client service). Defaults to auto-discovering one, e.g. Guzzle if installed.
   automatic_padding: true         # pad messages automatically for better security (against more bandwith usage)
+```
+
+### Customizing the HTTP client
+
+Since `minishlink/web-push` v11, the library depends on [PSR-18](https://www.php-fig.org/psr/psr-18/) instead of
+being tied to Guzzle. Configure your PSR-18 client instance directly and either register it under `Psr\Http\Client\ClientInterface` (picked up automatically) or point
+`http_client` at its service id:
+
+```yml
+minishlink_web_push:
+  http_client: my_configured_http_client
+```
+
+```yml
+services:
+  my_configured_http_client:
+    class: GuzzleHttp\Client
+    arguments:
+      - timeout: 20
 ```

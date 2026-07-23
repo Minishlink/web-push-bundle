@@ -28,7 +28,6 @@ class MinishlinkWebPushExtensionTest extends AbstractExtensionTestCase
 
         $this->assertContainerBuilderHasParameter('minishlink_web_push.auth');
         $this->assertContainerBuilderHasParameter('minishlink_web_push.default_options');
-        $this->assertContainerBuilderHasParameter('minishlink_web_push.timeout');
         $this->assertContainerBuilderHasParameter('minishlink_web_push.automatic_padding');
         $this->assertContainerBuilderHasService('minishlink_web_push');
         $this->assertContainerBuilderHasService('Minishlink\WebPush\WebPush');
